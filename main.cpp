@@ -1,5 +1,3 @@
-#pragma once
-
 #include <iostream>
 #include <random>
 
@@ -13,8 +11,9 @@ int main (){
     // std::cout<< e.weight;
 
 
+    
 
-
+    makeNode();
 
 }
 

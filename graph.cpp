@@ -1,10 +1,10 @@
-#pragma once
-
 #include <iostream>
 #include <random>
 
 #include "graph.h"
 
+void makeNode() { 
+}
 
 
 // int randInt(int, int);

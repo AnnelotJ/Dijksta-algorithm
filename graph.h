@@ -1,18 +1,22 @@
 #include <iostream>
 #include <random>
 
+#pragma once
+
 struct Node {
     char id; 
 
-    Node (char id) : id(id){};
+
     
 };
 
 struct Edge {
+    Node* nodeIn; 
+    Node* nodeOut; 
     int weight;
 
 
-    Edge (int weight) : weight(weight);
+
 };
 
-
+void makeNode();
