@@ -1,25 +1,38 @@
 #include <iostream>
 #include <random>
+#include <map>
+#include <vector> 
+#include <random>
 
 #include "graph.h"
 
-void makeNode() { 
+std::map<Node*,std::vector<Edge>> graph; 
+
+
+void generateGraph(int amountOfNodes){ 
+    generateNodes(amountOfNodes);
+
+    
+
 }
 
 
-// int randInt(int, int);
-
-// int create
-//    int a = randInt(2,50); 
-//     Edge e(a);
-//     std::cout<< e.weight;
-
-
-//     int randInt(int, int);
-
+void generateNodes(int amountOfNodes) { 
+    // std::cout<<"Making " << amountOfNodes << " Nodes\n";
+    for (int i =0; i<amountOfNodes; i++){
+        Node* newNode = new Node();
+        newNode->id = 'A' + i;
+        graph[newNode];
+    }
     
-// int randInt (int low, int high){
-//     static std::mt19937 gen(std::random_device{}()); 
-//     std::uniform_int_distribution <> dist (low, high); 
-//     return dist(gen);
-// }
+    // for(const auto& pair : graph){
+    //     std::cout<< pair.first->id << ": " << pair.second.size() <<std::endl;
+    // }
+}
+
+void generateEdges (Node* a, Node* b){
+
+
+}
+
+

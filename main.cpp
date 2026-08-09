@@ -6,14 +6,12 @@
 
 
 int main (){ 
-    // int a = randInt(2,50); 
-    // Edge e(a);
-    // std::cout<< e.weight;
+    int amountOfNodes; 
 
-
+    std::cout<<"How many nodes?\nThe weights will a randomly determined.\n"; 
+    std::cin>>amountOfNodes;
     
-
-    makeNode();
+    generateGraph(amountOfNodes);
 
 }
 

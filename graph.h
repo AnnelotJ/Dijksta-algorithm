@@ -10,8 +10,8 @@ struct Edge {
     Node* nodeOut; 
     int weight;
 
-
-
 };
 
-void makeNode();
+void generateNodes(int);
+void generateEdges(Node*, Node*); 
+void generateGraph(int);
