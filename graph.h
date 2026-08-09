@@ -12,6 +12,8 @@ struct Edge {
 
 };
 
-void generateNodes(int);
-void generateEdges(Node*, Node*); 
 void generateGraph(int);
+void generateNodes(int);
+void generatedEdges ();
+void generateEdge(Node*, Node*); 
+void printGraph();
