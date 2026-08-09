@@ -1,13 +1,8 @@
-#include <iostream>
-#include <random>
-
 #pragma once
 
 struct Node {
     char id; 
 
-
-    
 };
 
 struct Edge {
