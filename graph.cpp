@@ -14,12 +14,12 @@ std::mt19937 gen(rd());
 std::uniform_int_distribution<> weightDist(0,100);
 
 
-void generateGraph(int amountOfNodes){ 
+std::map<Node*, std::vector<Edge>> generateGraph(int amountOfNodes){ 
     generateNodes(amountOfNodes);
     generatedEdges();
-
     printGraph();
 
+    return graph;
 }
 
 void printGraph() {
