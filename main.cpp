@@ -4,7 +4,7 @@
 
 #include "graph.h"
 
-std::map<Node*,std::vector<Edge>> graph; 
+extern std::map<Node*, std::vector<Edge>> graph;
 
 int main (){ 
     int amountOfNodes; 
