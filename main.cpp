@@ -31,3 +31,6 @@ Node* startingNode(std::map<Node*, std::vector<Edge>>){
     return randomNode; 
 }
 
+void generatePath(){
+    std::cout<<"hello";
+}
