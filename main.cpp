@@ -2,8 +2,10 @@
 #include <random>
 #include <algorithm>
 #include <map>
-
+#include <algorithm>
 #include "graph.h"
+
+// clang++ -std=c++17 main.cpp graph.cpp 
 
 extern std::map<Node*, std::vector<Edge>> graph;
 
