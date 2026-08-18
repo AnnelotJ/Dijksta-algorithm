@@ -3,7 +3,10 @@
 #include <algorithm>
 #include <map>
 #include <algorithm>
+#include <vector>
+#include <set>
 #include "graph.h"
+
 
 // clang++ -std=c++17 main.cpp graph.cpp 
 
@@ -17,8 +20,18 @@ int main (){
     
     graph = generateGraph(amountOfNodes);
 
-    Node* x = startingNode(graph);
-    std::cout << x; 
+    Node* startNode = startingNode(graph);
+
+    generatePath(startNode, graph);
+
+    // std::cout<<"Start Node::" << startNode->id << "\nx";
+
+    // for (const Edge& e : graph.at(startNode)) {
+    // std::cout << "  " << e.nodeIn->id << " -> " << e.nodeOut->id
+    //           << " (weight: " << e.weight << ")\n";
+
+    
+    //}
     
 }
 
@@ -33,6 +46,16 @@ Node* startingNode(std::map<Node*, std::vector<Edge>>){
     return randomNode; 
 }
 
-void generatePath(){
-    std::cout<<"hello";
+void generatePath(Node* startingNode, std::map<Node*,std::vector<Edge>> graph){
+   
+    int distance = 0; 
+
+    std::set<Node*> visitedNodes; 
+
+    // Retrieve the starting edge
+    
+    auto startingEdges = graph[startingNode];
+    // now select the shortest edge 
+    
+
 }

@@ -17,7 +17,7 @@ std::map<Node*, std::vector<Edge>> generateGraph(int);
 
 // Main functions
 Node* startingNode(std::map<Node*,std::vector<Edge>>);
-void generatePath(); 
+void generatePath(Node*, std::map<Node*,std::vector<Edge>>); 
 
 // Graph functions
 void generateNodes(int);

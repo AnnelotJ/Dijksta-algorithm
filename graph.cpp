@@ -11,7 +11,7 @@ std::vector<Node*> nodeList;
 
 std::random_device rd;
 std::mt19937 gen(rd());
-std::uniform_int_distribution<> weightDist(0,100);
+std::uniform_int_distribution<> weightDist(0,20);
 
 
 std::map<Node*, std::vector<Edge>> generateGraph(int amountOfNodes){ 
@@ -58,7 +58,7 @@ void generatedEdges (){
        Node* a = nodeList[dist(gen)]; 
        Node* b = nodeList[dist(gen)];
     
-       if (a == b){ 
+       if (a == b or b == a){ 
         continue;
        }
        
