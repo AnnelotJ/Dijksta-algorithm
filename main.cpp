@@ -6,6 +6,8 @@
 #include <vector>
 #include <set>
 #include "graph.h"
+#include <typeinfo>
+
 
 
 // clang++ -std=c++17 main.cpp graph.cpp 
@@ -15,27 +17,21 @@ extern std::map<Node*, std::vector<Edge>> graph;
 int main (){ 
     int amountOfNodes; 
 
-    std::cout<<"How many nodes?\nThe weights will a randomly determined.\n"; 
+    std::cout<<"The weights will a randomly determined.\nHow many nodes would you like to be there?\n"; 
     std::cin>>amountOfNodes;
     
     graph = generateGraph(amountOfNodes);
 
-    Node* startNode = startingNode(graph);
+    Node* startNode = pickStartingNode(graph);
 
     generatePath(startNode, graph);
-
-    // std::cout<<"Start Node::" << startNode->id << "\nx";
-
-    // for (const Edge& e : graph.at(startNode)) {
-    // std::cout << "  " << e.nodeIn->id << " -> " << e.nodeOut->id
-    //           << " (weight: " << e.weight << ")\n";
-
     
-    //}
+
+    return 0;
     
 }
 
-Node* startingNode(std::map<Node*, std::vector<Edge>>){ 
+Node* pickStartingNode (std::map<Node*, std::vector<Edge>>){ 
     std::random_device rd; 
     std::mt19937 gen(rd()); 
     
@@ -46,16 +42,31 @@ Node* startingNode(std::map<Node*, std::vector<Edge>>){
     return randomNode; 
 }
 
+
 void generatePath(Node* startingNode, std::map<Node*,std::vector<Edge>> graph){
-   
-    int distance = 0; 
 
     std::set<Node*> visitedNodes; 
 
-    // Retrieve the starting edge
-    
+    // Adding the first node to the table
+    std::cout<<startingNode->id << "\n";
+    visitedNodes.insert(startingNode);
+
     auto startingEdges = graph[startingNode];
-    // now select the shortest edge 
+    std::cout<<"The starting edges are:\n";
     
+   
+    for (const Edge& e : startingEdges) {
+    Node* neighbour = (e.nodeIn == startingNode) ? e.nodeOut : e.nodeIn;
+    std::cout << startingNode->id << " -- " << neighbour->id
+              << " (weight: " << e.weight << ")\n";
+    }
+
+    
+    // now select the shortest edge  
+
 
 }
+
+
+
+

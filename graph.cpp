@@ -17,7 +17,7 @@ std::uniform_int_distribution<> weightDist(0,20);
 std::map<Node*, std::vector<Edge>> generateGraph(int amountOfNodes){ 
     generateNodes(amountOfNodes);
     generatedEdges();
-    printGraph();
+    // printGraph();
 
     return graph;
 }
@@ -52,18 +52,44 @@ bool allNodesConnected(){
     return true;
 }
 
+// std::map<Node*,std::vector<Edge>> g
+bool isIsolatedNode(std::map<Node*,std::vector<Edge>> graph){
+    for (const auto& [node, edge] :graph){ 
+        
+    }
+    return false; 
+    
+}
+
 void generatedEdges (){ 
     std::uniform_int_distribution<> dist(0, nodeList.size() - 1);
     while (!allNodesConnected()){
        Node* a = nodeList[dist(gen)]; 
        Node* b = nodeList[dist(gen)];
     
-       if (a == b or b == a){ 
+       if (a == b){
+        continue;
+       }
+       if (edgeExist(a,b)){ 
         continue;
        }
        
        generateEdge(a,b);
     }
+
+}
+
+Node* retrieveEdge(const Edge& e, Node* a){ 
+    return (e.nodeIn == a) ? e.nodeOut : e.nodeIn;
+}
+
+bool edgeExist (Node* a, Node* b){
+    for (const Edge& e : graph[a]){
+        if (retrieveEdge(e,a) == b) {
+            return true;
+        }
+    }
+    return false;
 
 }
 
